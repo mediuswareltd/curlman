@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Curlman</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app" class="side-open">
+      <aside id="sidebar">
+        <div class="side-head">
+          <svg class="logo" viewBox="0 0 1024 1024" aria-hidden="true">
+            <path d="M300 380 L440 512 L300 644" fill="none" stroke="currentColor" stroke-width="96" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M520 644 H724" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="96" stroke-linecap="round" />
+          </svg>
+          <span class="brand">Curlman</span>
+        </div>
+        <div class="search">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" /><path d="M10.5 10.5 14 14" /></svg>
+          <input id="hist-search" type="search" placeholder="Search history" spellcheck="false" />
+        </div>
+        <ul id="history" role="listbox" aria-label="History"></ul>
+        <div class="side-foot">
+          <span id="curl-version" title="curl binary used to run requests"></span>
+          <button id="clear-history" class="ghost small" title="Clear history">Clear</button>
+        </div>
+      </aside>
+
+      <main id="main">
+        <section id="editor-wrap">
+          <div class="ed-head">
+            <span class="ed-tab">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 5 6.5 8l-3 3M8.5 11h4" /></svg>
+              command.sh
+            </span>
+            <span class="spacer"></span>
+            <span class="ed-hint">Ctrl Space for suggestions</span>
+            <span id="ed-pos">Ln 1, Col 1</span>
+            <span id="ed-dialect">bash</span>
+          </div>
+          <div class="ed-body" id="ed-body">
+            <pre id="hl" aria-hidden="true"></pre>
+            <textarea
+              id="editor"
+              spellcheck="false"
+              autocomplete="off"
+              autocapitalize="off"
+              autocorrect="off"
+              aria-label="cURL command"
+              aria-autocomplete="list"
+              aria-controls="suggest"
+              placeholder="Paste a cURL command…"
+            ></textarea>
+          </div>
+        </section>
+        <ul id="suggest" role="listbox" aria-label="Suggestions" hidden></ul>
+
+        <div id="bar" title="Drag to resize">
+          <button id="toggle-side" class="icon" title="Toggle history (Ctrl+B)" aria-label="Toggle history">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="2.5" width="12" height="11" rx="2" /><path d="M6 2.5v11" /></svg>
+          </button>
+          <span id="method" class="method">GET</span>
+          <span id="target"></span>
+          <span class="spacer"></span>
+          <button id="format" class="ghost small" title="Toggle multi-line / one-line (Ctrl+Shift+F)">Format</button>
+          <button id="copy-cmd" class="ghost small" title="Copy command">Copy</button>
+          <button id="run" class="run" title="Send (Enter or Ctrl+Enter)">
+            <span class="label">Send</span><kbd id="run-kbd">↵</kbd>
+          </button>
+          <div id="progress"></div>
+        </div>
+
+        <section id="response" aria-live="polite"></section>
+      </main>
+    </div>
+    <div id="toast" role="status"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

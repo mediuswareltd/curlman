@@ -1,0 +1,24 @@
+{
+  "name": "curlman",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "node --experimental-strip-types --no-warnings --test src/parse.test.ts src/highlight.test.ts src/suggest.test.ts scripts/dev-bridge.test.ts",
+    "test:rust": "cargo test --manifest-path src-tauri/Cargo.toml",
+    "test:e2e": "npm run build && node --experimental-strip-types --no-warnings --test --test-concurrency=1 scripts/e2e.test.ts",
+    "test:all": "npm test && npm run test:rust && tauri build && npm run test:e2e",
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "puppeteer-core": "^23.11.1",
+    "typescript": "^5.6",
+    "vite": "^6"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2"
+  }
+}
