@@ -5,6 +5,9 @@ hero:
   name: "Curlman"
   text: "Paste cURL. Press Enter. Get the response."
   tagline: "A fast, minimal Tauri desktop app for running raw cURL commands with shell-accurate parsing and readable responses."
+  image:
+    src: /hero.png
+    alt: "Curlman showing a cURL command and its JSON response"
   actions:
   - theme: brand
     text: Get started

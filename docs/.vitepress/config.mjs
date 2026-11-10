@@ -47,4 +47,12 @@ export default defineConfig({
       provider: 'local'
     }
   }
+,
+  vite: {
+    css: {
+      postcss: {
+        plugins: []
+      }
+    }
+  }
 })
