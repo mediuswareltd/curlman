@@ -10,7 +10,7 @@ A fast, minimal Tauri desktop app for running raw cURL commands with shell-accur
 </p>
 
 <p align="center">
-  <img src="docs/screenshot.png" alt="Curlman showing a cURL command and its JSON response" width="860">
+  ![screenshot](/screenshot.png)
 </p>
 
 ## Why Curlman
