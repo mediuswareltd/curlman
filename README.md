@@ -129,3 +129,15 @@ browser. The desktop part runs on Windows and needs a release build.
 | `src-tauri/src/main.rs` | Desktop backend: runs curl, captures headers, body and timing |
 | `scripts/dev-bridge.ts` | The same backend for `npm run dev` |
 | `scripts/*.test.ts` | Backend and end-to-end tests |
+
+## Documentation
+
+Full docs site (VitePress): **https://mediuswareltd.github.io/curlman/**
+
+Local preview:
+
+```bash
+cd docs
+npm install
+npm run docs:dev
+```
