@@ -10,7 +10,7 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/favicon.svg' }],
   ],
   themeConfig: {
-    logo: { light: '/logo.svg', dark: '/logo.svg' },
+    logo: { light: '/logo.svg', dark: '/logo.svg', alt: "Curlman" },
     siteTitle: "Curlman",
     nav: [
       { text: 'Home', link: '/' },
@@ -45,7 +45,8 @@ export default defineConfig({
     },
     search: {
       provider: 'local'
-    }
+    },
+    outline: [2, 3]
   }
 ,
   vite: {
