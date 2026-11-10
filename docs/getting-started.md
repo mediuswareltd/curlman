@@ -11,6 +11,7 @@ Curlman uses the `curl` that's already on your system: `%SystemRoot%\System32\cu
 on Windows 10 and later, or `curl` on your `PATH` on macOS and Linux. To use a different
 binary, set the `CURLMAN_CURL` environment variable.
 
+
 ## 2. Usage
 
 Paste a command and press **Enter**:
@@ -49,6 +50,7 @@ Curlman captures output itself, so it removes flags that would redirect or resha
 `-o`, `-O`, `-i`, `-v`, `-s`, `-S`, `-w`, `-D`, `-f`, `--trace` and similar. Every
 other flag is passed to curl unchanged.
 
+
 ## 3. Development
 
 Requirements: Node.js 22+, Rust, and the
@@ -69,6 +71,7 @@ Release output:
 
 - App: `src-tauri/target/release/curlman.exe`
 - Installer: `src-tauri/target/release/bundle/nsis/Curlman_<version>_x64-setup.exe`
+
 
 ## Next
 
